@@ -25,8 +25,8 @@ public class LeftRotateByK {
          *      j += 1;
          * }
          */
-        for (int i = n-k; i < n; i++) {
-            nums[i] = temp[i - (n-k)];
+        for (int i = n - k; i < n; i++) {
+            nums[i] = temp[i - (n - k)];
         }
 
         // Result

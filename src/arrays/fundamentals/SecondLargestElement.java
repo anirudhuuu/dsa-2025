@@ -27,7 +27,7 @@ public class SecondLargestElement {
         int largestElement = Integer.MIN_VALUE;
         int secondLargestElement = Integer.MIN_VALUE;
 
-        for (int num: nums) {
+        for (int num : nums) {
             largestElement = Math.max(largestElement, num);
         }
 
@@ -44,12 +44,12 @@ public class SecondLargestElement {
         int largestElement = Integer.MIN_VALUE;
         int secondLargestElement = Integer.MIN_VALUE;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] > largestElement) {
+        for (int num : nums) {
+            if (num > largestElement) {
                 secondLargestElement = largestElement;
-                largestElement = nums[i];
-            } else if (nums[i] > secondLargestElement && nums[i] != largestElement) {
-                secondLargestElement = nums[i];
+                largestElement = num;
+            } else if (num > secondLargestElement && num != largestElement) {
+                secondLargestElement = num;
             }
         }
 
