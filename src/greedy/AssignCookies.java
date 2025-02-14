@@ -2,6 +2,19 @@ package greedy;
 
 import java.util.Arrays;
 
+/**
+ * Consider a scenario where a teacher wants to distribute cookies
+ * to students, with each student receiving at most one cookie.
+ * <p>
+ * Given two arrays, Student and Cookie, the ith value in the Student array
+ * describes the minimum size of cookie that the ith student can be assigned.
+ * <p>
+ * The jth value in the Cookie array represents the size of the jth cookie.
+ * <p>
+ * If Cookie[j] >= Student[i], the jth cookie can be assigned to the ith student.
+ * <p>
+ * Maximize the number of students assigned with cookies and output the maximum number.
+ */
 public class AssignCookies {
     public static int findMaximumCookieStudents(int[] students, int[] cookies) {
         int n = students.length;
