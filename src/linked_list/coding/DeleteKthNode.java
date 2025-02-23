@@ -1,5 +1,9 @@
 package linked_list.coding;
 
+/**
+ * Given the head of a singly linked list and an integer k, delete the
+ * kth node of the linked list and return the head of the modified list.
+ */
 public class DeleteKthNode {
     static class ListNode {
         int val;

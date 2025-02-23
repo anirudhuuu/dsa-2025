@@ -1,5 +1,10 @@
 package linked_list.coding;
 
+/**
+ * Given the head of a singly linked list and an
+ * integer X, delete the node with value X and
+ * return the head of the modified list.
+ */
 public class DeleteNodeWithValueX {
     static class ListNode {
         int val;
