@@ -1,4 +1,4 @@
-package linked_list;
+package linked_list.theory;
 
 public class InsertionLL {
     class Node {

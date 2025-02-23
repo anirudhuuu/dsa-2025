@@ -1,4 +1,4 @@
-package linked_list;
+package linked_list.theory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class LLToArray {
         n2.next = n3;
         n3.next = n4;
         n4.next = n5;
-        
+
         List<Integer> result = convertLinkedListToArray(head);
 
         for (int val : result) {
