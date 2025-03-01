@@ -1,4 +1,4 @@
-package binary_search;
+package binary_search.fundamentals;
 
 /**
  * Given a sorted array of nums and an integer x,
