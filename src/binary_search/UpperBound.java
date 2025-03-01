@@ -11,7 +11,7 @@ package binary_search;
  * If no such index is found, return the size of the array.
  */
 public class UpperBound {
-    static int upperBoundBrute(int[] nums, int x) {
+    int upperBoundBrute(int[] nums, int x) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > x) {
                 return i;
@@ -21,9 +21,9 @@ public class UpperBound {
         return nums.length;
     }
 
-    static int upperBound(int[] nums, int x) {
+    int upperBound(int[] nums, int x) {
         int answer = nums.length;
-        
+
         int low = 0;
         int high = nums.length - 1;
 
@@ -39,9 +39,5 @@ public class UpperBound {
         }
 
         return answer;
-    }
-
-    public static void main(String[] args) {
-
     }
 }
