@@ -9,7 +9,7 @@ import java.util.List;
  * order of their appearance when printed in a spiral manner.
  */
 public class SpiralMatrix {
-    static List<Integer> spiralOrder(int[][] matrix) {
+    List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
 
         int n = matrix.length;
@@ -52,10 +52,5 @@ public class SpiralMatrix {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-        System.out.println(spiralOrder(arr));
     }
 }
