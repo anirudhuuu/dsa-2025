@@ -1,7 +1,25 @@
 package arrays.fundamentals;
 
+import java.util.Arrays;
+
+/**
+ * Given an array of integers nums, return the
+ * value of the largest element in the array
+ */
 public class LargestElement {
-    public static int largestElement(int[] nums) {
+    int largestElementBrute(int[] nums) {
+        // When the input is empty
+        if (nums.length == 0) return -1;
+
+        // Sort the given array in ascending ordering
+        Arrays.sort(nums);
+
+        return nums[nums.length - 1];
+    }
+
+    int largestElementBest(int[] nums) {
+        if (nums.length == 0) return -1;
+
         int largestElement = nums[0];
 
         for (int num : nums) {
@@ -9,11 +27,5 @@ public class LargestElement {
         }
 
         return largestElement;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {3, 3, 6, 1};
-
-        System.out.println(largestElement(nums));
     }
 }

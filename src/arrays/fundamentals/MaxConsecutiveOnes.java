@@ -1,7 +1,13 @@
 package arrays.fundamentals;
 
+/**
+ * Given a binary array nums, return the maximum
+ * number of consecutive 1s in the array.
+ * <p>
+ * A binary array is an array that contains only 0s and 1s.
+ */
 public class MaxConsecutiveOnes {
-    public static int findMaxConsecutiveOnes(int[] nums) {
+    int findMaxConsecutiveOnes(int[] nums) {
         int maxCount = 0;
         int count = 0;
 
@@ -15,11 +21,5 @@ public class MaxConsecutiveOnes {
         }
 
         return maxCount;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1};
-
-        System.out.println(findMaxConsecutiveOnes(nums));
     }
 }

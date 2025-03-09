@@ -2,8 +2,19 @@ package arrays.fundamentals;
 
 import java.util.Arrays;
 
+/**
+ * Given an array of integers nums, return the second-largest
+ * element in the array.
+ * <p>
+ * If the second-largest element does not exist, return -1.
+ */
 public class SecondLargestElement {
-    public static int secondLargestBrute(int[] nums) {
+    int secondLargestBrute(int[] nums) {
+        // When the input is empty or has only single value
+        if (nums.length == 0 || nums.length == 1) {
+            return -1;
+        }
+
         // Sort the given array in ascending ordering
         Arrays.sort(nums);
 
@@ -20,10 +31,14 @@ public class SecondLargestElement {
         return -1;
     }
 
-    public static int secondLargestBetter(int[] nums) {
+    int secondLargestBetter(int[] nums) {
+        // When the input is empty or has only single value
+        if (nums.length == 0 || nums.length == 1) {
+            return -1;
+        }
+
         // Avoid sorting in this approach
         // rather find the largest and then look for second-largest
-
         int largestElement = Integer.MIN_VALUE;
         int secondLargestElement = Integer.MIN_VALUE;
 
@@ -40,7 +55,7 @@ public class SecondLargestElement {
         return secondLargestElement == Integer.MIN_VALUE ? -1 : secondLargestElement;
     }
 
-    public static int secondLargestOptimal(int[] nums) {
+    int secondLargestOptimal(int[] nums) {
         int largestElement = Integer.MIN_VALUE;
         int secondLargestElement = Integer.MIN_VALUE;
 
@@ -54,13 +69,5 @@ public class SecondLargestElement {
         }
 
         return secondLargestElement == Integer.MIN_VALUE ? -1 : secondLargestElement;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {3, 3, 6, 1};
-
-        System.out.println(secondLargestBrute(nums));
-        System.out.println(secondLargestBetter(nums));
-        System.out.println(secondLargestOptimal(nums));
     }
 }

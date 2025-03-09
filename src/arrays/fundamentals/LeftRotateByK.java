@@ -1,7 +1,11 @@
 package arrays.fundamentals;
 
+/**
+ * Given an integer array nums and a non-negative integer k,
+ * rotate the array to the left by k steps.
+ */
 public class LeftRotateByK {
-    public static void rotateArrayBrute(int[] nums, int k) {
+    void rotateArrayBrute(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
 
@@ -16,8 +20,8 @@ public class LeftRotateByK {
             nums[i - k] = nums[i];
         }
 
-        // Keep the temp back in the array
-        /**
+        /* Keep the temp back in the array
+         * =================================
          * int j = 0;
          *
          * for (int i = n - k; i < n; i++) {
@@ -28,14 +32,9 @@ public class LeftRotateByK {
         for (int i = n - k; i < n; i++) {
             nums[i] = temp[i - (n - k)];
         }
-
-        // Result
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
     }
 
-    public static void reverseArray(int[] nums, int start, int end) {
+    void reverseArray(int[] nums, int start, int end) {
         while (start < end) {
             int temp = nums[start];
             nums[start] = nums[end];
@@ -46,24 +45,12 @@ public class LeftRotateByK {
         }
     }
 
-    public static void rotateArray(int[] nums, int k) {
+    void rotateArray(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
 
         reverseArray(nums, 0, k - 1);
-
         reverseArray(nums, k, n - 1);
-
         reverseArray(nums, 0, n - 1);
-
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5, 6, 7};
-
-        rotateArray(nums, 3);
     }
 }
