@@ -3,8 +3,15 @@ package arrays.logic_building;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Given two sorted arrays nums1 and nums2, return an
+ * array containing the intersection of these two arrays.
+ * <p>
+ * The intersection of two arrays is an array where
+ * all values are present in both arrays.
+ */
 public class IntersectionOfSortedArrays {
-    public static int[] intersectionArrayBrute(int[] nums1, int[] nums2) {
+    int[] intersectionArrayBrute(int[] nums1, int[] nums2) {
         List<Integer> answer = new ArrayList<>();
 
         int n1 = nums1.length;
@@ -29,7 +36,7 @@ public class IntersectionOfSortedArrays {
         return answer.stream().mapToInt(i -> i).toArray();
     }
 
-    public static int[] intersectionArray(int[] nums1, int[] nums2) {
+    int[] intersectionArray(int[] nums1, int[] nums2) {
         List<Integer> answer = new ArrayList<>();
 
         int n1 = nums1.length;
@@ -51,27 +58,5 @@ public class IntersectionOfSortedArrays {
         }
 
         return answer.stream().mapToInt(val -> val).toArray();
-    }
-
-    public static void main(String[] args) {
-        int[] nums1 = {1, 2, 2, 3, 5};
-        int[] nums2 = {1, 2, 7};
-
-        int[] result1 = intersectionArrayBrute(nums1, nums2);
-
-        for (int num : result1) {
-            System.out.print(num + " ");
-        }
-
-        System.out.println();
-
-        int[] nums3 = {-45, -45, 0, 0, 2};
-        int[] nums4 = {-50, -45, 0, 0, 5, 7};
-
-        int[] result2 = intersectionArray(nums3, nums4);
-
-        for (int num : result2) {
-            System.out.print(num + " ");
-        }
     }
 }

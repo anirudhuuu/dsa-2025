@@ -5,8 +5,17 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Given two sorted arrays nums1 and nums2,
+ * return an array that contains the union of these two arrays.
+ * The elements in the union must be in ascending order.
+ * <p>
+ * The union of two arrays is an array where all values are
+ * distinct and are present in either the first array,
+ * the second array, or both.
+ */
 public class UnionOfSortedArrays {
-    public static int[] unionArrayBrute(int[] nums1, int[] nums2) {
+    int[] unionArrayBrute(int[] nums1, int[] nums2) {
         Set<Integer> set = new TreeSet<>();
 
         for (int num : nums1) {
@@ -28,7 +37,7 @@ public class UnionOfSortedArrays {
         return result;
     }
 
-    public static int[] unionArray(int[] nums1, int[] nums2) {
+    int[] unionArray(int[] nums1, int[] nums2) {
         int n1 = nums1.length;
         int n2 = nums2.length;
 
@@ -68,21 +77,5 @@ public class UnionOfSortedArrays {
         }
 
         return unionArray.stream().mapToInt(val -> val).toArray();
-    }
-
-    public static void main(String[] args) {
-        int[] nums1 = {1, 2, 3, 4, 5};
-        int[] nums2 = {1, 2, 7};
-
-        int[] result = unionArrayBrute(nums1, nums2);
-        int[] result2 = unionArray(nums1, nums2);
-
-        for (int num : result) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-        for (int num : result2) {
-            System.out.print(num + " ");
-        }
     }
 }

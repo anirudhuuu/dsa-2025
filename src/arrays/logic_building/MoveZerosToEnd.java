@@ -1,8 +1,15 @@
 package arrays.logic_building;
 
+/**
+ * Given an integer array nums, move all the 0's to the end of the array.
+ * The relative order of the other elements must remain the same.
+ * <p>
+ * This must be done in place, without making a copy of the array.
+ */
 public class MoveZerosToEnd {
-    public static void moveZeroes(int[] nums) {
+    void moveZeroes(int[] nums) {
         int currentIndex = 0;
+        // Capture all non-zero values and set from start
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 nums[currentIndex] = nums[i];
@@ -10,18 +17,9 @@ public class MoveZerosToEnd {
             }
         }
 
+        // Set rest of the part with zeros
         for (int i = currentIndex; i < nums.length; i++) {
             nums[i] = 0;
         }
-
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 0, 2, 3, 2, 0, 0, 4, 5, 1};
-
-        moveZeroes(nums);
     }
 }

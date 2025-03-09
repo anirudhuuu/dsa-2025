@@ -3,8 +3,23 @@ package arrays.logic_building;
 import java.util.Set;
 import java.util.TreeSet;
 
+/**
+ * Given an integer array nums sorted in non-decreasing order,
+ * remove all duplicates in-place so that each unique element
+ * appears only once. "Return the number of unique elements in the array."
+ * <p>
+ * If the number of unique elements be k, then,
+ * - Change the array nums such that the first k elements
+ * of nums contain the unique values in the order that they were present originally.
+ * - The remaining elements, as well as the size of the
+ * array does not matter in terms of correctness.
+ * <p>
+ * An array sorted in non-decreasing order is an array where
+ * every element to the right of an element is either equal
+ * to or greater in value than that element.
+ */
 public class RemoveDuplicatesFromSorted {
-    public static int removeDuplicatesBrute(int[] nums) {
+    int removeDuplicatesBrute(int[] nums) {
         // To store values in order of insertion
         Set<Integer> set = new TreeSet<>();
 
@@ -13,23 +28,17 @@ public class RemoveDuplicatesFromSorted {
             set.add(num);
         }
 
-        int noOfElements = set.size();
-
-        int j = 0;
-        for (int val : set) {
-            nums[j] = val;
-            j += 1;
-        }
-
-        // Print the final array
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-
-        return noOfElements;
+        return set.size();
+        /*
+         * int j = 0;
+         * for (int val : set) {
+         *      nums[j] = val;
+         *      j += 1;
+         * }
+         */
     }
 
-    public static int removeDuplicates(int[] nums) {
+    int removeDuplicates(int[] nums) {
         int i = 0;
 
         for (int j = 1; j < nums.length; j++) {
@@ -39,18 +48,6 @@ public class RemoveDuplicatesFromSorted {
             }
         }
 
-        // Print the final array
-        for (int num : nums) {
-            System.out.print(num + " ");
-        }
-
         return i + 1;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1, 1, 2, 2, 2, 3, 3};
-
-        System.out.println("\nSize :: " + removeDuplicatesBrute(nums));
-        System.out.println("\nSize :: " + removeDuplicates(nums));
     }
 }
