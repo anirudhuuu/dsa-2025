@@ -1,4 +1,4 @@
-package patterns.easy_medium;
+package patterns.easy;
 
 /**
  * Given an integer n. You need to recreate the pattern
