@@ -1,5 +1,16 @@
 package patterns.easy_medium;
 
+/**
+ * Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+ * <p>
+ * 1
+ * 0 1
+ * 1 0 1
+ * 0 1 0 1
+ * 1 0 1 0 1
+ * <p>
+ * Print the pattern in the function given to you.
+ */
 public class Pattern11 {
     void pattern11(int n) {
         for (int i = 1; i <= n; i++) {
