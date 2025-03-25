@@ -9,7 +9,11 @@ package basics.maths;
  * right and right to left.
  */
 public class PalindromeNumber {
-    public boolean isPalindrome(int n) {
+    /**
+     * Time Complexity: O(log n)
+     * Space Complexity: O(1)
+     */
+    boolean isPalindrome(int n) {
         int reverse = 0;
         int temp = n;
 

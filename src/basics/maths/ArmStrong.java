@@ -9,7 +9,11 @@ package basics.maths;
  * digits of the number, raised to the power of the number of digits.
  */
 public class ArmStrong {
-    public boolean isArmstrong(int n) {
+    /**
+     * Time Complexity: O(log² n) (due to repeated power calculations)
+     * Space Complexity: O(1)
+     */
+    boolean isArmstrong(int n) {
         int noOfDigits = 0;
         int temp = n;
 

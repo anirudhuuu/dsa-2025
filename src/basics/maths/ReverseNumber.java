@@ -5,7 +5,11 @@ package basics.maths;
  * by placing the digits of n in reverse order.
  */
 public class ReverseNumber {
-    public int reverseNumber(int n) {
+    /**
+     * Time Complexity: O(log n)
+     * Space Complexity: O(1)
+     */
+    int reverseNumber(int n) {
         int reverse = 0;
 
         while (n > 0) {

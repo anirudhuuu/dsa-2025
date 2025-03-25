@@ -8,7 +8,11 @@ package basics.maths;
  * number is 0 itself.
  */
 public class CountAllDigits {
-    public int countDigit(int n) {
+    /**
+     * Time Complexity: O(log n)
+     * Space Complexity: O(1)
+     */
+    int countDigit(int n) {
         if (n == 0) {
             return 1;
         }
@@ -23,7 +27,11 @@ public class CountAllDigits {
         return noOfDigits;
     }
 
-    public int countDigitOptimal(int n) {
+    /**
+     * Time Complexity: O(1)
+     * Space Complexity: O(1)
+     */
+    int countDigitOptimal(int n) {
         if (n == 0) {
             return 1;
         }

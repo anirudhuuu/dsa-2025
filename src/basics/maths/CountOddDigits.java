@@ -7,7 +7,11 @@ package basics.maths;
  * The number will have no leading zeroes, except when the number is 0 itself.
  */
 public class CountOddDigits {
-    public int countOddDigit(int n) {
+    /**
+     * Time Complexity: O(log n)
+     * Space Complexity: O(1)
+     */
+    int countOddDigit(int n) {
         if (n == 0) {
             return 0;
         }

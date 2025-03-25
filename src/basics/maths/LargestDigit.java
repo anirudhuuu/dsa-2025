@@ -5,7 +5,11 @@ package basics.maths;
  * present in the number.
  */
 public class LargestDigit {
-    public int largestDigit(int n) {
+    /**
+     * Time Complexity: O(log n)
+     * Space Complexity: O(1)
+     */
+    int largestDigit(int n) {
         int largest = 0;
 
         while (n > 0) {
