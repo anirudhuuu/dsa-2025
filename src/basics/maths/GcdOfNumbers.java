@@ -9,7 +9,43 @@ package basics.maths;
  * positive integer that divides both of the integers.
  */
 public class GcdOfNumbers {
-    public int GCDEuclidean(int n1, int n2) {
+    /**
+     * Time Complexity: O(min(n1, n2))
+     * Space Complexity: O(1)
+     */
+    int GCDBrute(int n1, int n2) {
+        int largest = 1;
+
+        for (int i = 2; i < Math.min(n1, n2); i++) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                largest = i;
+            }
+        }
+
+        return largest;
+    }
+
+    /**
+     * Time Complexity: O(min(n1, n2))
+     * Space Complexity: O(1)
+     */
+    int GCDBetter(int n1, int n2) {
+        int largest = 1;
+
+        for (int i = Math.min(n1, n2); i > 1; i--) {
+            if (n1 % i == 0 && n2 % i == 0) {
+                return i;
+            }
+        }
+
+        return largest;
+    }
+
+    /**
+     * Time Complexity: O(log (min(n1, n2)) )
+     * Space Complexity: O(1)
+     */
+    int GCDEuclidean(int n1, int n2) {
         while (n1 != 0 && n2 != 0) {
             if (n1 > n2) {
                 // n1 = n1 - n2; to reduce the no of iterations
@@ -25,17 +61,5 @@ public class GcdOfNumbers {
         } else {
             return n2;
         }
-    }
-
-    public int GCDBrute(int n1, int n2) {
-        int largest = 1;
-
-        for (int i = 2; i < Math.min(n1, n2); i++) {
-            if (n1 % i == 0 && n2 % i == 0) {
-                largest = i;
-            }
-        }
-
-        return largest;
     }
 }

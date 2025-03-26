@@ -8,8 +8,23 @@ package basics.maths;
  * A prime number is a number which has no divisors except, 1 and itself.
  */
 public class CountNPrimes {
-    public boolean isPrime(int n) {
+    /* boolean isPrime(int n) {
         for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    } */
+    // More optimised
+    boolean isPrime(int n) {
+        // Edge case
+        if (n == 1) {
+            return false;
+        }
+
+        for (int i = 2; i * i <= n; i++) {
             if (n % i == 0) {
                 return false;
             }
@@ -18,7 +33,11 @@ public class CountNPrimes {
         return true;
     }
 
-    public int primeUptoN(int n) {
+    /**
+     * Time Complexity: O(n * √n)
+     * Space Complexity: O(1)
+     */
+    int primeUptoN(int n) {
         int noOfPrimes = 0;
 
         for (int i = 1; i <= n; i++) {

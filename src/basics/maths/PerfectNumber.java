@@ -9,7 +9,11 @@ package basics.maths;
  * to the number itself.
  */
 public class PerfectNumber {
-    public boolean isPerfect(int n) {
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+    boolean isPerfect(int n) {
         int perfectCount = 0;
 
         for (int i = 1; i < n; i++) {
@@ -19,5 +23,31 @@ public class PerfectNumber {
         }
 
         return perfectCount == n;
+    }
+
+    /**
+     * Time Complexity: O(√n)
+     * Space Complexity: O(1)
+     */
+    boolean isPerfectOptimised(int n) {
+        // Edge case
+        if (n == 1) {
+            return false;
+        }
+
+        int sum = 1;
+
+        // other way of writing: i < Math.sqrt(n)
+        for (int i = 2; i * i < n; i++) {
+            if (n % i == 0) {
+                sum += i;
+
+                if (i != (n / i)) {
+                    sum += (n / i);
+                }
+            }
+        }
+
+        return sum == n;
     }
 }
