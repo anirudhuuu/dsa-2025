@@ -5,7 +5,11 @@ package basics.arrays;
  * the given array. The reversal of array should be in-place.
  */
 public class ReverseArray {
-    public void reverse(int[] arr, int n) {
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+    void reverse(int[] arr, int n) {
         int low = 0;
         int high = n - 1;
 

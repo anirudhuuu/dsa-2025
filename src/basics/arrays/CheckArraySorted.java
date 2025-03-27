@@ -7,7 +7,11 @@ package basics.arrays;
  * If the array is sorted then return True, else return False.
  */
 public class CheckArraySorted {
-    public boolean arraySortedOrNot(int[] arr, int n) {
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+    boolean arraySortedOrNot(int[] arr, int n) {
         for (int i = 1; i < n; i++) {
             if (arr[i - 1] > arr[i]) {
                 return false;

@@ -5,7 +5,11 @@ package basics.arrays;
  * sum of all the elements in the array.
  */
 public class SumOfArrElements {
-    public int sum(int arr[], int n) {
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+    int sum(int arr[], int n) {
         int result = 0;
 
         for (int i = 0; i < n; i++) {

@@ -5,9 +5,13 @@ package basics.arrays;
  * the number of odd in the array.
  */
 public class CountOddNumsArr {
-    public int countOdd(int[] arr, int n) {
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
+     */
+    int countOdd(int[] arr, int n) {
         int count = 0;
-        
+
         for (int i = 0; i < n; i++) {
             if (arr[i] % 2 != 0) {
                 count += 1;
