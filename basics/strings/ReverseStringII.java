@@ -10,6 +10,12 @@ import java.util.Vector;
  * reversal in place with O(1) extra memory.
  * 
  * Note: no need to return anything, modify the given list.
+ * 
+ * Time Complexity: O(n) — where "n" is the size of the vector;
+ * each character is visited once.
+ *
+ * Space Complexity: O(1) — in-place swap using constant extra memory
+ * ("temp" variable only).
  */
 class ReverseStringII {
     void reverseString(Vector<Character> s) {

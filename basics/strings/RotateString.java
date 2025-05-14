@@ -12,6 +12,19 @@ package basics.strings;
  * For example,
  * if s = "abcde",
  * then it will be "bcdea" after one shift.
+ * 
+ * Brute Force
+ * ------------
+ * Time Complexity: O(n²) — n rotations, each creating a new string of
+ * up to n length.
+ * 
+ * Space Complexity: O(n) — space for each rotated string.
+ * 
+ * Optimized Version
+ * ------------------
+ * Time Complexity: O(n) — checking substring presence in s + s using contains.
+ * 
+ * Space Complexity: O(n) — for the concatenated string s + s.
  */
 class RotateString {
     // Brute force method
@@ -31,6 +44,7 @@ class RotateString {
         return false;
     }
 
+    // Optimised
     boolean rotateString(String s, String goal) {
         // Base condition
         if (s.length() != goal.length()) {

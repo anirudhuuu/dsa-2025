@@ -10,6 +10,11 @@ package basics.strings;
  * All occurrences of a character must be replaced with another
  * character while preserving the order of characters. No two characters
  * may map to the same character, but a character may map to itself.
+ * 
+ * Time Complexity: O(n) — single pass through n characters of both strings.
+ * 
+ * Space Complexity: O(1) — fixed-size arrays of 256 elements used
+ * regardless of input size.
  */
 class IsomorphicString {
     boolean isomorphicString(String s, String t) {

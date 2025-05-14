@@ -6,6 +6,11 @@ package basics.strings;
  * You are given a string s. Return true if the string
  * is palindrome, otherwise false. A string is called
  * palindrome if it reads the same forward and backward.
+ * 
+ * Time Complexity: O(n) — where n is the length of the string;
+ * each character is checked once from both ends.
+ * 
+ * Space Complexity: O(1) — no extra space used beyond a few integer variables.
  */
 class PalindromeCheck {
     boolean palindromeCheck(String s) {

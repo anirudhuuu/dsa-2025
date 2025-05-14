@@ -12,6 +12,20 @@ package basics.strings;
  * 
  * leading zeros are zeros that appear at the beginning of a
  * number before any non-zero digit.
+ * 
+ * Example
+ * ------------
+ * Input: s = "5347"
+ * Output: "5347"
+ * Explanation: The odd numbers formed by given strings are --> 5, 3, 53, 347,
+ * 5347. So the largest among all the possible odd numbers for given string is
+ * 5347.
+ * 
+ * Time Complexity: O(n) — one pass from end to start to find
+ * last odd digit + one pass from start to skip leading zeros.
+ * 
+ * Space Complexity: O(1) — no extra space used;
+ * operates directly on the input string.
  */
 class LargestOddNumber {
     /*
