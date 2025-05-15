@@ -40,7 +40,7 @@ class SortCharacterFrequency {
         }
     }
 
-    public List<Character> frequencySort(String s) {
+    List<Character> frequencySort(String s) {
         // considering all lowercase alphabets
         Pair[] frequencyPair = new Pair[26];
 
@@ -74,12 +74,5 @@ class SortCharacterFrequency {
         }
 
         return result;
-    }
-
-    public static void main(String[] args) {
-        SortCharacterFrequency sol = new SortCharacterFrequency();
-        String s = "tree";
-        List<Character> result = sol.frequencySort(s);
-        System.out.println(result);
     }
 }
