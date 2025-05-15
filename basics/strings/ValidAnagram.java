@@ -22,7 +22,7 @@ import java.util.Arrays;
  * Time: O(n) single pass through both strings + fixed loop of 26
  * Space: O(1) uses fixed-size array of 26 integers
  */
-public class ValidAnagram {
+class ValidAnagram {
     // Brute Force
     boolean anagramStringsBrute(String s, String t) {
         // Base condition check
