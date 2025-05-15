@@ -9,13 +9,11 @@ package bit_manipulation.theory;
  * Implement a method that takes an integer input and
  * returns its binary equivalent.
  * 
- * Example
- * ---------
- * Input: 10
- * Output: "1010"
+ * Time Complexity: O(log₂N) — because you're dividing n by 2 in each
+ * iteration.
  * 
- * Input: 7
- * Output: "111"
+ * Space Complexity: O(log₂N) — to store the binary digits in the
+ * StringBuilder.
  */
 class DecimalToBinary {
     String convertDecimalToBinary(int number) {
