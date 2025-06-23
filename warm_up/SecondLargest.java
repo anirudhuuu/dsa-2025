@@ -1,5 +1,6 @@
 package warm_up;
 
+// Find the Second largest number in an array
 public class SecondLargest {
     static double secondLargestNumber(int[] arr) {
         /**
