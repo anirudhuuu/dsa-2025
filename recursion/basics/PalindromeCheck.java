@@ -1,43 +1,27 @@
 package recursion.basics;
 
-import java.util.ArrayList;
-
+/**
+ * Check if String is Palindrome or Not
+ * =======================================
+ * Given a string s, return true if the string is palindrome, otherwise false.
+ * 
+ * A string is called palindrome if it reads the same forward and backward.
+ */
 public class PalindromeCheck {
-    public static void reverse(ArrayList<Character> s, int left, int right) {
+    public static boolean isPalindrome(String s, int left, int right) {
         if (left >= right) {
-            return;
+            return true;
         }
 
-        char temp = s.get(left);
-        s.set(left, s.get(right));
-        s.set(right, temp);
+        if (s.charAt(left) != s.charAt(right)) {
+            return false;
+        }
 
-        reverse(s, left + 1, right - 1);
-    }
-
-    public static ArrayList<Character> reverseString(ArrayList<Character> s) {
-        int left = 0;
-        int right = s.size() - 1;
-
-        reverse(s, left, right);
-
-        return s;
+        return isPalindrome(s, left + 1, right - 1);
     }
 
     public static boolean palindromeCheck(String s) {
-        ArrayList<Character> charList = new ArrayList<>();
-        for (char c : s.toCharArray()) {
-            charList.add(c);
-        }
-
-        ArrayList<Character> reversedCharacters = reverseString(charList);
-
-        String reverseStr = "";
-        for (char c : reversedCharacters) {
-            reverseStr += c;
-        }
-
-        return s.equals(reverseStr);
+        return isPalindrome(s, 0, s.length() - 1);
     }
 
     public static void main(String[] args) {
