@@ -1,4 +1,4 @@
-package stacks;
+package stacks_queues;
 
 /**
  * Implement Stack using Arrays
@@ -60,15 +60,13 @@ public class ArrayStack01 {
     }
 
     public static void main(String[] args) {
-        // Operations: ["ArrayStack", "push", "push", "top", "pop", "isEmpty"]
-        // Nums: [[5], [10]]
-
         ArrayStack01 stack = new ArrayStack01(5);
+        // Operations on a stack
         stack.push(10);
-        stack.push(10);
-
-        System.out.println(stack.top());
-        System.out.println(stack.pop());
-        System.out.println(stack.isEmpty());
+        stack.push(20);
+        System.out.println("Top element :: " + stack.top());
+        System.out.println("Popped element :: " + stack.pop());
+        System.out.println("Top element :: " + stack.top());
+        System.out.println("Is stack empty? :: " + stack.isEmpty());
     }
 }
