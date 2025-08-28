@@ -44,8 +44,9 @@ public class ArrayQueue02 {
             end = (end + 1) % maxSize;
         }
 
-        queue[end] = x;
         currentSize = currentSize + 1;
+
+        queue[end] = x;
     }
 
     public int pop() {
