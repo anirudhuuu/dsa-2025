@@ -43,7 +43,9 @@ public class ArrayStack01 {
             return -1;
         }
 
-        return stack[top--];
+        int poppedValue = stack[top];
+        top = top - 1;
+        return poppedValue;
     }
 
     public int top() {
