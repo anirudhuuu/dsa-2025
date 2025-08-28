@@ -84,6 +84,13 @@ public class ArrayQueue02 {
     }
 
     public static void main(String[] args) {
-
+        ArrayQueue02 queue = new ArrayQueue02(5);
+        // Operations on a queue
+        queue.push(10);
+        queue.push(20);
+        System.out.println("Front element :: " + queue.peek());
+        System.out.println("Popped element :: " + queue.pop());
+        System.out.println("Front element :: " + queue.peek());
+        System.out.println("Is queue empty? :: " + queue.isEmpty());
     }
 }
