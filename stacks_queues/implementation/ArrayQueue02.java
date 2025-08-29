@@ -1,4 +1,4 @@
-package stacks_queues;
+package implementation;
 
 /**
  * Implement Queue using Arrays
