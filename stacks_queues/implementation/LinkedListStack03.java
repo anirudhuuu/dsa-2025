@@ -46,9 +46,9 @@ public class LinkedListStack03 {
 
         int poppedValue = top.data;
 
-        Node temp = top;
+        // Node temp = top;
         top = top.next;
-        temp = null;
+        // temp = null;
 
         size = size - 1;
 
