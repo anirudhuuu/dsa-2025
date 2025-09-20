@@ -1,4 +1,4 @@
-package basics.arrays;
+package arrays.basics;
 
 /**
  * Given an array of n elements. The task is to return the count of

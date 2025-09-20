@@ -1,4 +1,4 @@
-package basics.arrays;
+package arrays.basics;
 
 /**
  * Given an array arr of n elements. The task is to reverse

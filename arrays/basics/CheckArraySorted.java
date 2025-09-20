@@ -1,4 +1,4 @@
-package basics.arrays;
+package arrays.basics;
 
 /**
  * Given an array arr of size n, the task is to check if the given
