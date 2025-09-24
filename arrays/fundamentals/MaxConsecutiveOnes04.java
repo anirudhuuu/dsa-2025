@@ -1,9 +1,11 @@
 package arrays.fundamentals;
 
 /**
+ * Max Consecutive Ones
+ * =====================
  * Given a binary array nums, return the maximum
  * number of consecutive 1s in the array.
- * <p>
+ * 
  * A binary array is an array that contains only 0s and 1s.
  */
 public class MaxConsecutiveOnes04 {
