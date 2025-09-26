@@ -4,16 +4,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Given an integer array nums, return a list of all
- * the leaders in the array.
- * <p>
- * A leader in an array is an element whose value is strictly
- * greater than all elements to its right in the given array.
- * The rightmost element is always a leader. The elements in the
- * leader array must appear in the order they appear in the nums array.
+ * Leaders in an Array
+ * =====================
+ * Given an integer array nums, return a list of all the leaders in the array.
+ * 
+ * A leader in an array is an element whose value is strictly greater than all
+ * elements to its right in the given array. The rightmost element is always a
+ * leader. The elements in the leader array must appear in the order they appear
+ * in the nums array.
  */
-public class LeadersInArray {
-    ArrayList<Integer> leadersBrute(int[] nums) {
+public class LeadersInArray01 {
+    /**
+     * Time Complexity: O(n^2)
+     * Space Complexity: O(n)
+     */
+    public static ArrayList<Integer> leadersBrute(int[] nums) {
         ArrayList<Integer> result = new ArrayList<>();
 
         if (nums.length == 0) {
@@ -41,7 +46,11 @@ public class LeadersInArray {
         return result;
     }
 
-    ArrayList<Integer> leaders(int[] nums) {
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     */
+    public static ArrayList<Integer> leaders(int[] nums) {
         ArrayList<Integer> result = new ArrayList<>();
 
         if (nums.length == 0) {
@@ -63,5 +72,22 @@ public class LeadersInArray {
         Collections.reverse(result);
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = { 1, 2, 3, 4, 5 };
+
+        ArrayList<Integer> result = leadersBrute(nums1);
+        for (int val : result) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
+
+        int[] nums2 = { 1, 2, 3, 4, 5 };
+        result = leaders(nums2);
+        for (int val : result) {
+            System.out.print(val + " ");
+        }
+        System.out.println();
     }
 }
