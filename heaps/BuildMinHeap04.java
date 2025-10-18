@@ -12,7 +12,7 @@ package heaps;
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
-public class BuildHeap04 {
+public class BuildMinHeap04 {
     public static void heapifyDown(int[] nums, int index) {
         int n = nums.length;
 
