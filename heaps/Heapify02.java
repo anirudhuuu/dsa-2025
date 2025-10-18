@@ -80,17 +80,17 @@ public class Heapify02 {
     }
 
     public static void main(String[] args) {
-        Heapify02 heapify01 = new Heapify02();
+        Heapify02 heapify = new Heapify02();
         int[] nums = { 7, 10, 8, 15, 20, 18, 25 }; // valid min-heap
 
         System.out.println("Original array: " + Arrays.toString(nums));
 
         // Change value at index 3 (was 15) to 5 and restore the heap
-        heapify01.heapify(nums, 3, 5);
+        heapify.heapify(nums, 3, 5);
         System.out.println("After heapify at index 3 with value 5: " + Arrays.toString(nums));
 
         // Change value at index 0 (was 7) to 30 and restore the heap
-        heapify01.heapify(nums, 0, 30);
+        heapify.heapify(nums, 0, 30);
         System.out.println("After heapify at index 0 with value 30: " + Arrays.toString(nums));
     }
 }
