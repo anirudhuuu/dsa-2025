@@ -21,10 +21,10 @@ package heaps;
  * No of internal nodes = (leaf nodes) - 1
  */
 
-public class Heapify01 {
+public class Heaps01 {
     public static void main(String[] args) {
         int n = 10;
-        
+
         int leafNodes = n / 2;
         int internalNodes = n - leafNodes;
 
