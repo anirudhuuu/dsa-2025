@@ -1,5 +1,13 @@
 package graphs;
 
+/**
+ * Adjacency Matrix representation of a graph
+ * 
+ * Space Complexity: O(N^2)
+ * - Always requires N x N matrix
+ * - Works for both directed and undirected graphs
+ * - Good for dense graphs, but wasteful for sparse ones
+ */
 public class AdjacencyMatrix01 {
     public static void main(String[] args) {
         int N = 5;

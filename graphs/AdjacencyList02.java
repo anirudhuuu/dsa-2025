@@ -2,6 +2,13 @@ package graphs;
 
 import java.util.ArrayList;
 
+/**
+ * Adjacency List representation of a graph
+ * 
+ * Space Complexity: O(N + E)
+ * - O(N) for storing N vertex lists
+ * - O(2E) for undirected edges (or O(E) for directed)
+ */
 public class AdjacencyList02 {
     public static void main(String[] args) {
         int N = 5;
