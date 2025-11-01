@@ -6,43 +6,35 @@ import java.util.Queue;
 
 public class BreadthFirstSearch03 {
     /**
-     * @param V   no of nodes in graph
-     * @param adj adjacency list
+     * @param V             no of nodes in graph
+     * @param adjacencyList adjacency list
      * @return bfs traversal
      */
-    ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj) {
-        ArrayList<Integer> bfs = new ArrayList<>();
+    ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adjacencyList) {
+        ArrayList<Integer> bfsTraversedResult = new ArrayList<>();
 
-        // visited array to keep track of nodes
+        // define a queue and array of visited
+        Queue<Integer> queue = new LinkedList<>();
         boolean[] visited = new boolean[V];
 
-        // queue that will store the elements level wise
-        Queue<Integer> q = new LinkedList<>();
-
-        // Starting point of the BFS traversal
-        q.add(1);
+        // pass the starting node into queue
+        queue.add(1);
         visited[1] = true;
 
-        while (!q.isEmpty()) {
-            // take the first element in the queue
-            Integer node = q.poll();
+        while (!queue.isEmpty()) {
+            Integer element = queue.poll();
+            bfsTraversedResult.add(element);
 
-            // add to the result
-            bfs.add(node);
-
-            /**
-             * get all adjacent nodes of the dequeued node if a adjacency has not been
-             * visited, them mark as visited and enqueue it
-             */
-            for (Integer val : adj.get(node)) {
-                if (visited[val] == false) {
-                    visited[val] = true;
-                    q.add(val);
+            // Who are the neighbours of removed element?
+            for (Integer neighbor : adjacencyList.get(element)) {
+                if (visited[neighbor] == false) {
+                    queue.add(neighbor);
+                    visited[neighbor] = true;
                 }
             }
         }
 
-        return bfs;
+        return bfsTraversedResult;
     }
 
     public static void main(String[] args) {
