@@ -4,6 +4,20 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * Breadth First Search (BFS)
+ * =============================
+ * BFS is a traversing algorithm where you should start from a selected node
+ * (source or starting node) and traverse the graph layerwise
+ * i.e., traverse the neighbor nodes first before moving to the next level
+ * neighbors.
+ * 
+ * Time Complexity: O(V + E)
+ * where V is the number of vertices and E is the number of edges
+ * 
+ * Space Complexity: O(V)
+ * for the queue and visited array
+ */
 public class BreadthFirstSearch03 {
     /**
      * @param V             no of nodes in graph

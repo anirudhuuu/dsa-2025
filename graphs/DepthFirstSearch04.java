@@ -2,6 +2,19 @@ package graphs;
 
 import java.util.ArrayList;
 
+/**
+ * Depth First Search (DFS)
+ * =============================
+ * DFS is a traversing algorithm where you should start from a selected node
+ * (source or starting node) and traverse the graph by exploring as far as
+ * possible along each branch before backtracking.
+ * 
+ * Time Complexity: O(V + E)
+ * where V is the number of vertices and E is the number of edges
+ * 
+ * Space Complexity: O(V)
+ * for the recursion stack and visited array
+ */
 public class DepthFirstSearch04 {
     /**
      * @param node          on which we are operating
