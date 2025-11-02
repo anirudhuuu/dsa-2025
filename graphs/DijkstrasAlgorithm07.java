@@ -36,8 +36,9 @@ public class DijkstrasAlgorithm07 {
         set.add(new int[] { 0, S });
 
         while (!set.isEmpty()) {
-            int distance = set.pollFirst()[0];
-            int node = set.pollFirst()[1];
+            int[] current = set.pollFirst();
+            int distance = current[0];
+            int node = current[1];
 
             // explore all the nodes of the removed value
             for (ArrayList<Integer> neighbor : adj.get(node)) {
