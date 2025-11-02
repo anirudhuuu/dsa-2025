@@ -1,20 +1,8 @@
 package graphs;
 
 import java.util.ArrayList;
-import java.util.PriorityQueue;
-
-class Pair implements Comparable<Pair> {
-    int node, distance;
-
-    Pair(int distance, int node) {
-        this.node = node;
-        this.distance = distance;
-    }
-
-    public int compareTo(Pair other) {
-        return this.distance - other.distance;
-    }
-}
+import java.util.Arrays;
+import java.util.TreeSet;
 
 /**
  * Dijkstra's Algorithm
@@ -22,46 +10,46 @@ class Pair implements Comparable<Pair> {
  * Dijkstra's algorithm is a graph search algorithm that finds the shortest path
  * between nodes in a graph.
  * 
- * Built using Priority Queue (Min Heap) and Adjacency List.
+ * Built using Set and Adjacency List.
  * 
  * Time Complexity: O(E log V)
  * where E is the number of edges and V is the number of vertices
  * 
  * Space Complexity: O(V)
- * for the priority queue and distances array
+ * for the set and distances array
  */
-public class DijkstrasAlgorithm06 {
+public class DijkstrasAlgorithm07 {
     public int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
-        // min heap
-        PriorityQueue<Pair> pq = new PriorityQueue<Pair>((x, y) -> x.distance - y.distance);
+        // set
+        TreeSet<int[]> set = new TreeSet<int[]>((a, b) -> {
+            if (a[0] != b[0])
+                return Integer.compare(a[0], b[0]); // Compare by distance
+            return Integer.compare(a[1], b[1]); // If distances are equal, compare by node
+        });
 
         // distances
         int[] dist = new int[V];
-
-        for (int i = 0; i < V; i++) {
-            dist[i] = Integer.MAX_VALUE;
-        }
+        Arrays.fill(dist, Integer.MAX_VALUE);
 
         // distance of source node
         dist[S] = 0;
+        set.add(new int[] { 0, S });
 
-        // initialize min-heap with first pair of value
-        pq.add(new Pair(0, S));
-
-        while (!pq.isEmpty()) {
-            int distance = pq.peek().distance;
-            int node = pq.peek().node;
-            pq.remove();
+        while (!set.isEmpty()) {
+            int distance = set.pollFirst()[0];
+            int node = set.pollFirst()[1];
 
             // explore all the nodes of the removed value
-            for (int i = 0; i < adj.get(node).size(); i++) {
-                int edgeWeight = adj.get(node).get(i).get(1);
-                int adjacentNode = adj.get(node).get(i).get(0);
+            for (ArrayList<Integer> neighbor : adj.get(node)) {
+                int adjacentNode = neighbor.get(0);
+                int edgeWeight = neighbor.get(1);
 
                 if (distance + edgeWeight < dist[adjacentNode]) {
+                    set.remove(new int[] { dist[adjacentNode], adjacentNode });
+
                     dist[adjacentNode] = distance + edgeWeight;
 
-                    pq.add(new Pair(dist[adjacentNode], adjacentNode));
+                    set.add(new int[] { dist[adjacentNode], adjacentNode });
                 }
             }
         }
