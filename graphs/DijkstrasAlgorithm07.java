@@ -55,6 +55,13 @@ public class DijkstrasAlgorithm07 {
             }
         }
 
+        // unreachable nodes
+        for (int i = 0; i < V; i++) {
+            if (dist[i] == Integer.MAX_VALUE) {
+                dist[i] = 1000000000;
+            }
+        }
+
         return dist;
     }
 
