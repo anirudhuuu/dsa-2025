@@ -3,34 +3,34 @@ package graphs;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-class Pair implements Comparable<Pair> {
-    int node, distance;
-
-    Pair(int distance, int node) {
-        this.node = node;
-        this.distance = distance;
-    }
-
-    public int compareTo(Pair other) {
-        return this.distance - other.distance;
-    }
-}
-
 /**
  * Dijkstra's Algorithm
  * =====================
  * Dijkstra's algorithm is a graph search algorithm that finds the shortest path
  * between nodes in a graph.
- * 
- * Built using Priority Queue (Min Heap) and Adjacency List.
- * 
+ * <p>
+ * Built using "Priority Queue" (Min Heap) and Adjacency List.
+ * <p>
  * Time Complexity: O(E log V)
  * where E is the number of edges and V is the number of vertices
- * 
+ * <p>
  * Space Complexity: O(V)
  * for the priority queue and distances array
  */
-public class DijkstrasAlgorithm06 {
+public class DijkstraAlgorithm06 {
+    static class Pair implements Comparable<Pair> {
+        int node, distance;
+
+        Pair(int distance, int node) {
+            this.node = node;
+            this.distance = distance;
+        }
+
+        public int compareTo(Pair other) {
+            return this.distance - other.distance;
+        }
+    }
+
     public int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
         // min heap
         PriorityQueue<Pair> pq = new PriorityQueue<Pair>((x, y) -> x.distance - y.distance);
@@ -69,8 +69,8 @@ public class DijkstrasAlgorithm06 {
         return dist;
     }
 
-    public static void main(String[] args) {
-        int V = 6;
+    static void main() {
+        int V = 6; // No of nodes
         int S = 0; // Source node
 
         // Construct adjacency list
@@ -132,7 +132,7 @@ public class DijkstrasAlgorithm06 {
         adj.get(2).add(edge24);
 
         // Run Dijkstra's Algorithm
-        DijkstrasAlgorithm06 solver = new DijkstrasAlgorithm06();
+        DijkstraAlgorithm06 solver = new DijkstraAlgorithm06();
         int[] distances = solver.dijkstra(V, adj, S);
 
         // Print shortest distances from source to all nodes

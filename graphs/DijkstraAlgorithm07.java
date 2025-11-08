@@ -9,16 +9,16 @@ import java.util.TreeSet;
  * =====================
  * Dijkstra's algorithm is a graph search algorithm that finds the shortest path
  * between nodes in a graph.
- * 
- * Built using Set and Adjacency List.
- * 
+ * <p>
+ * Built using "Set" and Adjacency List.
+ * <p>
  * Time Complexity: O(E log V)
  * where E is the number of edges and V is the number of vertices
- * 
+ * <p>
  * Space Complexity: O(V)
  * for the set and distances array
  */
-public class DijkstrasAlgorithm07 {
+public class DijkstraAlgorithm07 {
     public int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
         // set
         TreeSet<int[]> set = new TreeSet<int[]>((a, b) -> {
@@ -33,7 +33,7 @@ public class DijkstrasAlgorithm07 {
 
         // distance of source node
         dist[S] = 0;
-        set.add(new int[] { 0, S });
+        set.add(new int[]{0, S});
 
         while (!set.isEmpty()) {
             int[] current = set.pollFirst();
@@ -46,11 +46,11 @@ public class DijkstrasAlgorithm07 {
                 int edgeWeight = neighbor.get(1);
 
                 if (distance + edgeWeight < dist[adjacentNode]) {
-                    set.remove(new int[] { dist[adjacentNode], adjacentNode });
+                    set.remove(new int[]{dist[adjacentNode], adjacentNode});
 
                     dist[adjacentNode] = distance + edgeWeight;
 
-                    set.add(new int[] { dist[adjacentNode], adjacentNode });
+                    set.add(new int[]{dist[adjacentNode], adjacentNode});
                 }
             }
         }
@@ -65,8 +65,8 @@ public class DijkstrasAlgorithm07 {
         return dist;
     }
 
-    public static void main(String[] args) {
-        int V = 6;
+    static void main() {
+        int V = 6; // No of nodes
         int S = 0; // Source node
 
         // Construct adjacency list
@@ -128,8 +128,7 @@ public class DijkstrasAlgorithm07 {
         adj.get(2).add(edge24);
 
         // Run Dijkstra's Algorithm
-        DijkstrasAlgorithm06 solver = new DijkstrasAlgorithm06();
-        int[] distances = solver.dijkstra(V, adj, S);
+        int[] distances = new DijkstraAlgorithm07().dijkstra(V, adj, S);
 
         // Print shortest distances from source to all nodes
         System.out.println("Shortest distances from node " + S + ":");
