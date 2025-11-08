@@ -27,7 +27,7 @@ public class DepthFirstSearch04 {
         visited[node] = true;
         result.add(node);
 
-        // find neighbours of operating node
+        // find neighbors of operating node
         for (Integer neighbour : adjacencyList.get(node)) {
             if (!visited[neighbour]) {
                 dfs(neighbour, visited, adjacencyList, result);

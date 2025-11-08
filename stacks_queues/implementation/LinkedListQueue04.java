@@ -6,26 +6,26 @@ package implementation;
  * Implement a First-In-First-Out (FIFO) queue using a singly linked list. The
  * implemented queue should support the following operations: push, pop, peek,
  * and isEmpty.
- * 
+ * <p>
  * Implement the LinkedListQueue class:
  * - void push(int x): Adds element x to the end of the queue.
  * - int pop(): Removes and returns the front element of the queue.
  * - int peek(): Returns the front element of the queue without removing it.
  * - boolean isEmpty(): Returns true if the queue is empty, false otherwise.
  */
-class Node {
+class LLNode {
     int data;
-    Node next;
+    implementation.LLNode next;
 
-    Node(int val) {
+    LLNode(int val) {
         data = val;
         next = null;
     }
 }
 
 public class LinkedListQueue04 {
-    private Node start;
-    private Node end;
+    private implementation.LLNode start;
+    private implementation.LLNode end;
     private int size;
 
     public LinkedListQueue04() {
@@ -34,7 +34,7 @@ public class LinkedListQueue04 {
     }
 
     public void push(int x) {
-        Node temp = new Node(x);
+        implementation.LLNode temp = new implementation.LLNode(x);
 
         if (start == null) {
             start = end = temp;
@@ -51,7 +51,7 @@ public class LinkedListQueue04 {
             return -1;
         }
 
-        Node temp = start;
+        implementation.LLNode temp = start;
         start = start.next;
 
         int poppedValue = temp.data;

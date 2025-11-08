@@ -6,7 +6,7 @@ package implementation;
  * Implement a Last-In-First-Out (LIFO) stack using a singly linked list. The
  * implemented stack should support the following operations: push, pop, top,
  * and isEmpty.
- * 
+ * <p>
  * Implement the LinkedListStack class:
  * - void push(int x): Pushes element x onto the stack.
  * - int pop(): Removes and returns the top element of the stack.
@@ -15,7 +15,7 @@ package implementation;
  */
 class Node {
     int data;
-    Node next;
+    implementation.LLNode next;
 
     Node(int val) {
         data = val;
@@ -24,7 +24,7 @@ class Node {
 }
 
 public class LinkedListStack03 {
-    private Node top;
+    private implementation.LLNode top;
     private int size;
 
     public LinkedListStack03() {
@@ -33,7 +33,7 @@ public class LinkedListStack03 {
     }
 
     public void push(int x) {
-        Node temp = new Node(x);
+        implementation.LLNode temp = new implementation.LLNode(x);
         temp.next = top;
         top = temp;
         size = size + 1;
