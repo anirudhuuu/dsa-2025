@@ -1,32 +1,39 @@
 package graphs;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Adjacency Matrix representation of a graph
- * 
- * Space Complexity: O(N^2)
+ * <p>
+ * Space Complexity: O(N²)
  * - Always requires N x N matrix
  * - Works for both directed and undirected graphs
  * - Good for dense graphs, but wasteful for sparse ones
+ * <p>
+ * Space Complexity: O(N²) The space needed to represent a graph using its adjacency matrix
+ * is N² locations. It is a costly method as n² locations are consumed. It is preferred for
+ * dense graphs where the number of edges is more.
  */
 public class AdjacencyMatrix01 {
-    public static void main(String[] args) {
-        int N = 5;
-        int M = 6;
+    static void main() {
+        Scanner sc = new Scanner(System.in);
 
-        // N = number of nodes
-        // M = number of edges
+        // number of nodes
+        int N = sc.nextInt();
 
-        // Adjacency Matrix
+        // number of edges
+        int M = sc.nextInt();
+
+        // Adjacency Matrix for undirected graph
         int[][] adjacencyMatrix = new int[N + 1][N + 1];
 
-        // Adjacency matrix with values
+        // Adjacency matrix with default value of '0' on all rows
         for (int i = 0; i < adjacencyMatrix.length; i++) {
-            for (int j = 0; j < adjacencyMatrix[i].length; j++) {
-                adjacencyMatrix[i][j] = 0;
-            }
+            Arrays.fill(adjacencyMatrix[i], 0);
         }
 
-        // Adding edges based on 1-based indexing
+        // Adding edges based on 1-based indexing manually
         // Edge 1-2
         adjacencyMatrix[1][2] = 1;
         adjacencyMatrix[2][1] = 1;
@@ -51,6 +58,16 @@ public class AdjacencyMatrix01 {
         adjacencyMatrix[4][5] = 1;
         adjacencyMatrix[5][4] = 1;
 
+        // Taking M edge inputs
+        for (int i = 0; i < M; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+
+            // add edges between two nodes
+            adjacencyMatrix[u][v] = 1;
+            adjacencyMatrix[v][u] = 1;
+        }
+
         // Print adjacency matrix
         for (int i = 0; i <= N; i++) {
             for (int j = 0; j <= N; j++) {
@@ -58,5 +75,7 @@ public class AdjacencyMatrix01 {
             }
             System.out.println();
         }
+
+        sc.close();
     }
 }

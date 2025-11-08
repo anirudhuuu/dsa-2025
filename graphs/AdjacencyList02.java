@@ -1,30 +1,38 @@
 package graphs;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Adjacency List representation of a graph
- * 
+ * <p>
  * Space Complexity: O(N + E)
  * - O(N) for storing N vertex lists
  * - O(2E) for undirected edges (or O(E) for directed)
+ * <p>
+ * Space Complexity: O(2xE) The space needed to represent a graph using its adjacency
+ * list is 2xE locations. This representation is much better than the adjacency
+ * matrix for sparse graphs (where the number of edges is less), as matrix
+ * representation consumes N² locations, and most of them are unused.
  */
 public class AdjacencyList02 {
-    public static void main(String[] args) {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+
+        // number of nodes
         int N = 5;
+
+        // number of edges
         int M = 6;
 
-        // N = number of nodes
-        // M = number of edges
+        ArrayList<ArrayList<Integer>> adjacencyList = new ArrayList<>(N + 1);
 
-        ArrayList<ArrayList<Integer>> adjacencyList = new ArrayList<ArrayList<Integer>>();
-
-        // add N+1 array lists into it
+        // add (N + 1) array lists into it at each index
         for (int i = 0; i <= N; i++) {
-            adjacencyList.add(new ArrayList<Integer>());
+            adjacencyList.add(new ArrayList<>());
         }
 
-        // Adding edges
+        // Adding edges based on 1-based indexing manually
         // Edge 1-2
         adjacencyList.get(1).add(2);
         adjacencyList.get(2).add(1);
@@ -49,6 +57,16 @@ public class AdjacencyList02 {
         adjacencyList.get(4).add(5);
         adjacencyList.get(5).add(4);
 
+        // Taking M edge inputs
+        for (int i = 0; i < M; i++) {
+            int u = sc.nextInt();
+            int v = sc.nextInt();
+
+            // add edges between two nodes
+            adjacencyList.get(u).add(v);
+            adjacencyList.get(v).add(u);
+        }
+
         // Print adjacency list
         for (int i = 1; i <= N; i++) {
             System.out.print(i + " -> ");
@@ -57,5 +75,7 @@ public class AdjacencyList02 {
             }
             System.out.println();
         }
+
+        sc.close();
     }
 }
