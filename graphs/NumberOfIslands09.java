@@ -17,7 +17,7 @@ import java.util.Queue;
  * Space Complexity: O(V + E)
  */
 public class NumberOfIslands09 {
-    public void bfs(int i, int j, boolean[][] visited, char[][] grid) {
+    void bfs(int i, int j, boolean[][] visited, char[][] grid) {
         visited[i][j] = true;
 
         Queue<int[]> queue = new LinkedList<>();
@@ -55,7 +55,7 @@ public class NumberOfIslands09 {
         }
     }
 
-    public int numIslands(char[][] grid) {
+    int numIslands(char[][] grid) {
         int n = grid.length; // rows
         int m = grid[0].length; // columns
 
@@ -77,7 +77,7 @@ public class NumberOfIslands09 {
         return numberOfIslands;
     }
 
-    public static void main(String[] args) {
+    static void main() {
         char[][] grid = {
                 {'1', '0', '0', '0', '1'},
                 {'0', '1', '0', '1', '0'},

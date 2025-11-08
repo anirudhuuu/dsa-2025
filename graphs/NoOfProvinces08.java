@@ -19,7 +19,7 @@ import java.util.List;
  * Space Complexity: O(V + E)
  */
 public class NoOfProvinces08 {
-    public void dfs(int node, ArrayList<ArrayList<Integer>> adjList, boolean[] visited) {
+    void dfs(int node, ArrayList<ArrayList<Integer>> adjList, boolean[] visited) {
         visited[node] = true;
 
         for (int neighbour : adjList.get(node)) {
@@ -29,7 +29,7 @@ public class NoOfProvinces08 {
         }
     }
 
-    public int numProvinces(int[][] adj) {
+    int numProvinces(int[][] adj) {
         // no of nodes
         int V = adj.length;
 

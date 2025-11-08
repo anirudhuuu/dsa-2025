@@ -19,7 +19,7 @@ import java.util.TreeSet;
  * for the set and distances array
  */
 public class DijkstraAlgorithm07 {
-    public int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
+    int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
         // set
         TreeSet<int[]> set = new TreeSet<int[]>((a, b) -> {
             if (a[0] != b[0])

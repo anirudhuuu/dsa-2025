@@ -40,7 +40,7 @@ public class FloodFillAlgo10 {
         }
     }
 
-    public int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
+    int[][] floodFill(int[][] image, int sr, int sc, int newColor) {
         int initialColor = image[sr][sc];
 
         if (newColor == initialColor) {
