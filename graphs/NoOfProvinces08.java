@@ -11,16 +11,19 @@ import java.util.List;
  * provinces. The graph is given as an n x n matrix adj where adj[i][j] = 1 if
  * the ith city and the jth city are directly connected, and adj[i][j] = 0
  * otherwise.
- * 
+ * <p>
  * A province is a group of directly or indirectly connected cities and no other
- * cities outside of the group.
+ * cities outside the group.
+ * <p>
+ * Time Complexity: O(V + E)
+ * Space Complexity: O(V + E)
  */
 public class NoOfProvinces08 {
-    public void dfs(int node, List<Integer> adjList[], boolean[] visited) {
+    public void dfs(int node, ArrayList<ArrayList<Integer>> adjList, boolean[] visited) {
         visited[node] = true;
 
-        for (int neighbour : adjList[node]) {
-            if (visited[neighbour] == false) {
+        for (int neighbour : adjList.get(node)) {
+            if (!visited[neighbour]) {
                 dfs(neighbour, adjList, visited);
             }
         }
@@ -34,16 +37,16 @@ public class NoOfProvinces08 {
         boolean[] visited = new boolean[V];
 
         // convert adjacency matrix to adjacency list
-        List<Integer>[] adjList = new ArrayList[V];
+        ArrayList<ArrayList<Integer>> adjacencyList = new ArrayList<>(V);
         for (int i = 0; i < V; i++) {
-            adjList[i] = new ArrayList<>();
+            adjacencyList.add(new ArrayList<>());
         }
 
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
                 if (adj[i][j] == 1 && i != j) {
-                    adjList[i].add(j);
-                    adjList[j].add(i);
+                    adjacencyList.get(i).add(j);
+                    adjacencyList.get(j).add(i);
                 }
             }
         }
@@ -51,24 +54,24 @@ public class NoOfProvinces08 {
         int noOfProvinces = 0;
 
         for (int i = 0; i < V; i++) {
-            if (visited[i] == false) {
+            if (!visited[i]) {
                 noOfProvinces += 1;
-                dfs(i, adjList, visited);
+                dfs(i, adjacencyList, visited);
             }
         }
 
         return noOfProvinces;
     }
 
-    public static void main(String[] args) {
+    static void main() {
         int[][] adj = {
-                { 1, 0, 0, 1 },
-                { 0, 1, 1, 0 },
-                { 0, 1, 1, 0 },
-                { 1, 0, 0, 1 }
+                {1, 0, 0, 1},
+                {0, 1, 1, 0},
+                {0, 1, 1, 0},
+                {1, 0, 0, 1}
         };
-        NoOfProvinces08 solver = new NoOfProvinces08();
-        int result = solver.numProvinces(adj);
-        System.out.println(result);
+
+        int result = new NoOfProvinces08().numProvinces(adj);
+        System.out.println("No of provinces :: " + result);
     }
 }
