@@ -8,10 +8,10 @@ import java.util.ArrayList;
  * DFS is a traversing algorithm where you should start from a selected node
  * (source or starting node) and traverse the graph by exploring as far as
  * possible along each branch before backtracking.
- * 
+ * <p>
  * Time Complexity: O(V + E)
  * where V is the number of vertices and E is the number of edges
- * 
+ * <p>
  * Space Complexity: O(V)
  * for the recursion stack and visited array
  */
@@ -29,7 +29,7 @@ public class DepthFirstSearch04 {
 
         // find neighbours of operating node
         for (Integer neighbour : adjacencyList.get(node)) {
-            if (visited[neighbour] == false) {
+            if (!visited[neighbour]) {
                 dfs(neighbour, visited, adjacencyList, result);
             }
         }
@@ -51,7 +51,7 @@ public class DepthFirstSearch04 {
         return dfsTraversedResult;
     }
 
-    public static void main(String[] args) {
+    static void main() {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
         /**

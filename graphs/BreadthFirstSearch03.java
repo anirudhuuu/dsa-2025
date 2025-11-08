@@ -11,10 +11,10 @@ import java.util.Queue;
  * (source or starting node) and traverse the graph layerwise
  * i.e., traverse the neighbor nodes first before moving to the next level
  * neighbors.
- * 
+ * <p>
  * Time Complexity: O(V + E)
  * where V is the number of vertices and E is the number of edges
- * 
+ * <p>
  * Space Complexity: O(V)
  * for the queue and visited array
  */
@@ -39,9 +39,9 @@ public class BreadthFirstSearch03 {
             Integer element = queue.poll();
             bfsTraversedResult.add(element);
 
-            // Who are the neighbours of removed element?
+            // Who are the neighbors of removed element?
             for (Integer neighbor : adjacencyList.get(element)) {
-                if (visited[neighbor] == false) {
+                if (!visited[neighbor]) {
                     queue.add(neighbor);
                     visited[neighbor] = true;
                 }
@@ -51,7 +51,7 @@ public class BreadthFirstSearch03 {
         return bfsTraversedResult;
     }
 
-    public static void main(String[] args) {
+    static void main() {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
         /**
