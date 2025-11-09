@@ -12,7 +12,7 @@ import java.util.Queue;
  * and column number of the current cell, and i2, j2 are the row number and column number
  * of the nearest cell having value 1.
  */
-public class DistanceOfNearestCellHavingOne {
+public class DistanceOfNearestCellHavingOne13 {
     class Node {
         int row;
         int column;
@@ -86,7 +86,7 @@ public class DistanceOfNearestCellHavingOne {
         };
 
         System.out.println("Distance of nearest cell having one :: ");
-        int[][] result = new DistanceOfNearestCellHavingOne().nearest(grid);
+        int[][] result = new DistanceOfNearestCellHavingOne13().nearest(grid);
 
         for (int[] rows : result) {
             for (int columns : rows) {
