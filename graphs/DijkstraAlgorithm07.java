@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeSet;
 
-/**
+/*
  * Dijkstra's Algorithm
  * =====================
  * Dijkstra's algorithm is a graph search algorithm that finds the shortest path
  * between nodes in a graph.
- * <p>
+ *
  * Built using "Set" and Adjacency List.
- * <p>
+ *
  * Time Complexity: O(E log V)
  * where E is the number of edges and V is the number of vertices
- * <p>
+ *
  * Space Complexity: O(V)
  * for the set and distances array
  */

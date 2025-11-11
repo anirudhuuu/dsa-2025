@@ -1,28 +1,34 @@
 package graphs;
 
 import java.util.ArrayList;
+import java.util.List;
 
-/**
+/*
  * Depth First Search (DFS)
  * =============================
- * DFS is a traversing algorithm where you should start from a selected node
- * (source or starting node) and traverse the graph by exploring as far as
- * possible along each branch before backtracking.
- * <p>
+ * DFS is a graph traversal algorithm that starts from a given source node
+ * and explores as deep as possible along each branch before backtracking.
+ * It fully explores one path, then returns and explores the next unvisited path.
+ *
  * Time Complexity: O(V + E)
- * where V is the number of vertices and E is the number of edges
- * <p>
+ * - V = number of vertices
+ * - E = number of edges
+ * DFS visits every vertex and edge at most once.
+ *
  * Space Complexity: O(V)
- * for the recursion stack and visited array
+ * - Due to the recursion stack in the worst case
+ * - Plus the visited array used to track explored nodes
  */
 public class DepthFirstSearch04 {
-    /**
-     * @param node          on which we are operating
-     * @param visited       list keeping track of what is already operated
-     * @param adjacencyList input graph
-     * @param result        final output
+    /*
+     * Performs a Depth First Search (DFS) starting from the given node.
+     *
+     * @param node          current node being explored
+     * @param visited       boolean array tracking which nodes have been visited
+     * @param adjacencyList graph represented as an adjacency list
+     * @param result        list collecting the DFS traversal order
      */
-    void dfs(int node, boolean[] visited, ArrayList<ArrayList<Integer>> adjacencyList, ArrayList<Integer> result) {
+    void dfs(int node, boolean[] visited, ArrayList<ArrayList<Integer>> adjacencyList, List<Integer> result) {
         // mark the current operating node as visited
         visited[node] = true;
         result.add(node);
@@ -35,27 +41,31 @@ public class DepthFirstSearch04 {
         }
     }
 
-    /**
-     * @param V             no of nodes in graph
-     * @param adjacencyList adjacency list
-     * @return dfs traversal
+    /*
+     * Performs DFS traversal for the entire graph.
+     * Works even if the graph has multiple disconnected components.
+     *
+     * @param V             number of nodes in the graph (0 to V-1)
+     * @param adjacencyList adjacency list of the graph
+     * @return DFS traversal order
      */
-    ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adjacencyList) {
-        ArrayList<Integer> dfsTraversedResult = new ArrayList<>();
+    List<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adjacencyList) {
+        List<Integer> dfsOrder = new ArrayList<>();
         boolean[] visited = new boolean[V];
 
         // start DFS from node 1
         // starting node, visited array, adjacency list, final result
-        dfs(1, visited, adjacencyList, dfsTraversedResult);
+        dfs(1, visited, adjacencyList, dfsOrder);
 
-        return dfsTraversedResult;
+        return dfsOrder;
     }
 
     static void main() {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-        /**
-         * Graph:
+        /*
+         * Graph
+         * --------
          * 0 -- {}
          * 1 -- {2, 6}
          * 2 -- {1, 3, 4}
@@ -91,8 +101,8 @@ public class DepthFirstSearch04 {
         adj.get(8).add(7);
         adj.get(9).add(6);
 
-        // Perform DFS
-        ArrayList<Integer> dfs = new DepthFirstSearch04().dfsOfGraph(10, adj);
+        // Perform DFS on the adjacency list
+        List<Integer> dfs = new DepthFirstSearch04().dfsOfGraph(10, adj);
         System.out.println("DFS Traversal: " + dfs);
     }
 }

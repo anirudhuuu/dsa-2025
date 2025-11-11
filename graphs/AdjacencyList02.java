@@ -3,17 +3,17 @@ package graphs;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
+/*
  * Adjacency List representation of a graph
- * <p>
+ * ==========================================
  * Space Complexity: O(N + E)
  * - O(N) for storing N vertex lists
- * - O(2E) for undirected edges (or O(E) for directed)
- * <p>
- * Space Complexity: O(2xE) The space needed to represent a graph using its adjacency
- * list is 2xE locations. This representation is much better than the adjacency
- * matrix for sparse graphs (where the number of edges is less), as matrix
- * representation consumes N² locations, and most of them are unused.
+ * - O(E) for directed edges
+ * - O(2*E) for undirected edges (because each edge appears twice)
+ *
+ * This representation is much more efficient than an adjacency matrix for
+ * sparse graphs. The adjacency matrix always consumes O(N²) space, even when
+ * most entries are unused.
  */
 public class AdjacencyList02 {
     static void main() {
@@ -57,15 +57,18 @@ public class AdjacencyList02 {
         adjacencyList.get(4).add(5);
         adjacencyList.get(5).add(4);
 
-        // Taking M edge inputs
-        for (int i = 0; i < M; i++) {
-            int u = sc.nextInt();
-            int v = sc.nextInt();
-
-            // add edges between two nodes
-            adjacencyList.get(u).add(v);
-            adjacencyList.get(v).add(u);
-        }
+        /*
+         * Taking M edge inputs
+         * -----------------------
+         * for (int i = 0; i < M; i++) {
+         *    int u = sc.nextInt();
+         *    int v = sc.nextInt();
+         *
+         *    // add edges between two nodes
+         *    adjacencyList.get(u).add(v);
+         *    adjacencyList.get(v).add(u);
+         * }
+         */
 
         // Print adjacency list
         for (int i = 1; i <= N; i++) {
@@ -75,7 +78,5 @@ public class AdjacencyList02 {
             }
             System.out.println();
         }
-
-        sc.close();
     }
 }

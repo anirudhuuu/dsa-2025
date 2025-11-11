@@ -3,17 +3,17 @@ package graphs;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-/**
+/*
  * Dijkstra's Algorithm
  * =====================
  * Dijkstra's algorithm is a graph search algorithm that finds the shortest path
  * between nodes in a graph.
- * <p>
+ *
  * Built using "Priority Queue" (Min Heap) and Adjacency List.
- * <p>
+ *
  * Time Complexity: O(E log V)
  * where E is the number of edges and V is the number of vertices
- * <p>
+ *
  * Space Complexity: O(V)
  * for the priority queue and distances array
  */
@@ -45,7 +45,7 @@ public class DijkstraAlgorithm06 {
         // distance of source node
         dist[S] = 0;
 
-        // initialize min-heap with first pair of value
+        // initialize min-heap with first a pair of value
         pq.add(new Pair(0, S));
 
         while (!pq.isEmpty()) {

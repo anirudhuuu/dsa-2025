@@ -2,60 +2,64 @@ package graphs;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-/**
+/*
  * Breadth First Search (BFS)
  * =============================
- * BFS is a traversing algorithm where you should start from a selected node
- * (source or starting node) and traverse the graph layerwise
- * i.e., traverse the neighbor nodes first before moving to the next level
- * neighbors.
- * <p>
+ * BFS is a graph traversal algorithm that starts from a given source node
+ * and explores all nodes level by level. It visits all immediate neighbors
+ * first before moving to the next layer of nodes.
+ *
  * Time Complexity: O(V + E)
- * where V is the number of vertices and E is the number of edges
- * <p>
+ * - V = number of vertices
+ * - E = number of edges
+ * BFS processes every vertex and every edge at most once.
+ *
  * Space Complexity: O(V)
- * for the queue and visited array
+ * - Due to the queue used for level-order traversal
+ * - Plus the visited array (or set) used to mark nodes
  */
 public class BreadthFirstSearch03 {
     /**
-     * @param V             no of nodes in graph
+     * BFS from a given start node.
+     *
+     * @param V             number of vertices (0...V-1)
      * @param adjacencyList adjacency list
-     * @return bfs traversal
+     * @return BFS order from start
      */
-    ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adjacencyList) {
-        ArrayList<Integer> bfsTraversedResult = new ArrayList<>();
-
-        // define a queue and array of visited
-        Queue<Integer> queue = new LinkedList<>();
+    List<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> adjacencyList) {
+        List<Integer> bfsOrder = new ArrayList<>();
         boolean[] visited = new boolean[V];
+        Queue<Integer> queue = new LinkedList<>();
 
-        // pass the starting node into queue
+        // Pass the starting node into queue
         queue.add(1);
         visited[1] = true;
 
         while (!queue.isEmpty()) {
             Integer element = queue.poll();
-            bfsTraversedResult.add(element);
+            bfsOrder.add(element);
 
-            // Who are the neighbors of removed element?
+            // Ask the picked node, who are the neighbors?
             for (Integer neighbor : adjacencyList.get(element)) {
                 if (!visited[neighbor]) {
-                    queue.add(neighbor);
                     visited[neighbor] = true;
+                    queue.add(neighbor);
                 }
             }
         }
 
-        return bfsTraversedResult;
+        return bfsOrder;
     }
 
     static void main() {
         ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
 
-        /**
-         * Graph:
+        /*
+         * Graph
+         * --------
          * 0 -- {}
          * 1 -- {2, 6}
          * 2 -- {1, 3, 4}
@@ -91,8 +95,8 @@ public class BreadthFirstSearch03 {
         adj.get(8).add(7);
         adj.get(9).add(6);
 
-        // Perform BFS
-        ArrayList<Integer> bfs = new BreadthFirstSearch03().bfsOfGraph(10, adj);
+        // Perform BFS on the adjacency list
+        List<Integer> bfs = new BreadthFirstSearch03().bfsOfGraph(10, adj);
         System.out.println("BFS Traversal: " + bfs);
     }
 }
