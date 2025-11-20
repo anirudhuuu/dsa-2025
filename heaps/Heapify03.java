@@ -2,15 +2,15 @@ package heaps;
 
 import java.util.Arrays;
 
-/**
+/*
  * Heapify Algorithm
  * =====================
  * Given an array nums representing a max-heap and two integers ind and val, set
  * the value at index ind (0-based) to val and perform the heapify algorithm
  * such that the resulting array follows the max-heap property.
- * 
+ *
  * Modify the original array in-place, no need to return anything.
- * 
+ *
  * Time Complexity: O(log n)
  * Space Complexity: O(1)
  */
@@ -19,9 +19,8 @@ public class Heapify03 {
         // find parent's index
         int parentIndex = (index - 1) / 2;
 
+        // if current value is greater than parent, percolate up in max-heap
         if (index > 0 && nums[index] > nums[parentIndex]) {
-            // if current value is greater than parent, percolate up in max-heap
-
             // swap current value and parent
             int temp = nums[index];
             nums[index] = nums[parentIndex];
@@ -64,30 +63,27 @@ public class Heapify03 {
 
     public void heapify(int[] nums, int index, int value) {
         if (nums[index] < value) {
-            nums[index] = value;
-
             // value increased, try bubbling up
+            nums[index] = value;
             heapifyUp(nums, index);
         } else {
-            nums[index] = value;
-
             // value decreased or same, try bubbling down
+            nums[index] = value;
             heapifyDown(nums, index);
         }
     }
 
-    public static void main(String[] args) {
-        Heapify03 heapify = new Heapify03();
-        int[] nums = { 25, 20, 18, 15, 10, 8, 7 }; // valid max-heap
+    static void main() {
+        int[] nums = {25, 20, 18, 15, 10, 8, 7}; // valid max-heap
 
         System.out.println("Original array: " + Arrays.toString(nums));
 
         // Change value at index 3 (was 15) to 30 and restore the heap
-        heapify.heapify(nums, 3, 30);
+        new Heapify03().heapify(nums, 3, 30);
         System.out.println("After heapify at index 3 with value 30: " + Arrays.toString(nums));
 
         // Change value at index 0 (was 25) to 5 and restore the heap
-        heapify.heapify(nums, 0, 5);
+        new Heapify03().heapify(nums, 0, 5);
         System.out.println("After heapify at index 0 with value 5: " + Arrays.toString(nums));
     }
 }
