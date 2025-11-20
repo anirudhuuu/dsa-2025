@@ -15,7 +15,7 @@ import java.util.Arrays;
  * Space Complexity: O(1)
  */
 public class Heapify02 {
-    public void heapifyUp(int[] nums, int index) {
+    void heapifyUp(int[] nums, int index) {
         // find parent's index
         int parentIndex = (index - 1) / 2;
 
@@ -32,7 +32,7 @@ public class Heapify02 {
         }
     }
 
-    public void heapifyDown(int[] nums, int index) {
+    void heapifyDown(int[] nums, int index) {
         int n = nums.length;
 
         // this is where correct value has to come from bottom
@@ -64,7 +64,7 @@ public class Heapify02 {
         }
     }
 
-    public void heapify(int[] nums, int index, int value) {
+    void heapify(int[] nums, int index, int value) {
         if (nums[index] > value) {
             // new value getting added is smaller than what was present before
             // so we move small value to top in min-heap

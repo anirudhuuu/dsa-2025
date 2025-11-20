@@ -13,7 +13,7 @@ package heaps;
  * Space Complexity: O(1)
  */
 public class BuildMinHeap04 {
-    public static void heapifyDown(int[] nums, int index) {
+    void heapifyDown(int[] nums, int index) {
         int n = nums.length;
 
         // index of smallest element
@@ -44,7 +44,7 @@ public class BuildMinHeap04 {
         }
     }
 
-    public static void buildMinHeap(int[] nums) {
+    void buildMinHeap(int[] nums) {
         int noOfNodes = nums.length;
 
         // on all the internal nodes
@@ -57,7 +57,7 @@ public class BuildMinHeap04 {
     static void main() {
         int[] nums = {6, 5, 2, 7, 1, 7};
 
-        buildMinHeap(nums);
+        new BuildMinHeap04().buildMinHeap(nums);
 
         for (int num : nums) {
             System.out.print(num + " ");

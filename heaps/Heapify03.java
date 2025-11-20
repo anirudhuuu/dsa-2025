@@ -15,7 +15,7 @@ import java.util.Arrays;
  * Space Complexity: O(1)
  */
 public class Heapify03 {
-    public void heapifyUp(int[] nums, int index) {
+    void heapifyUp(int[] nums, int index) {
         // find parent's index
         int parentIndex = (index - 1) / 2;
 
@@ -31,7 +31,7 @@ public class Heapify03 {
         }
     }
 
-    public void heapifyDown(int[] nums, int index) {
+    void heapifyDown(int[] nums, int index) {
         int n = nums.length;
 
         int largestIndex = index;
@@ -61,7 +61,7 @@ public class Heapify03 {
         }
     }
 
-    public void heapify(int[] nums, int index, int value) {
+    void heapify(int[] nums, int index, int value) {
         if (nums[index] < value) {
             // value increased, try bubbling up
             nums[index] = value;
