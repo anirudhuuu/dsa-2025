@@ -1,14 +1,14 @@
 package heaps;
 
-/**
+/*
  * Build heap from a given Array
  * ==============================
  * Given an array of integers nums, convert it in-place into a max-heap.
- * 
+ *
  * A binary max-heap is a complete binary tree where the key at the root is the
  * maximum among all keys present in a binary max-heap and the same property is
  * recursively true for all nodes in a Binary Tree.
- * 
+ *
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
@@ -23,12 +23,12 @@ public class BuildMaxHeap05 {
         int leftChildIndex = 2 * index + 1;
         int rightChildIndex = 2 * index + 2;
 
-        // if the left child has largest value, update the largest index
+        // if the left child has the largest value, update the largest index
         if (leftChildIndex < n && nums[leftChildIndex] > nums[largestIndex]) {
             largestIndex = leftChildIndex;
         }
 
-        // if the right child has largest value, update the largest index
+        // if the right child has the largest value, update the largest index
         if (rightChildIndex < n && nums[rightChildIndex] > nums[largestIndex]) {
             largestIndex = rightChildIndex;
         }
@@ -52,8 +52,8 @@ public class BuildMaxHeap05 {
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = { 6, 5, 2, 7, 1, 7 };
+    static void main() {
+        int[] nums = {6, 5, 2, 7, 1, 7};
 
         buildMaxHeap(nums);
 
