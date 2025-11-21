@@ -6,14 +6,14 @@ package heaps;
  * Given an array of integers nums, sort the array in non-decreasing order using
  * the heap sort algorithm. Sort the given array itself, there is no need to
  * return anything.
- * 
+ * <p>
  * A sorted array in non-decreasing order is one in which each element is either
  * greater than or equal to all the elements to its left in the array.
- * 
+ * <p>
  * Time Complexity: O(n log n)
  * Space Complexity: O(1)
  */
-public class HeapSort10 {
+public class HeapSort11 {
     /**
      * Procedure:
      * 1. take an array input of nums
@@ -74,7 +74,7 @@ public class HeapSort10 {
     }
 
     public static void main(String[] args) {
-        int[] nums = { 7, 4, 1, 5, 3 };
+        int[] nums = {7, 4, 1, 5, 3};
         heapSort(nums);
 
         for (int val : nums) {

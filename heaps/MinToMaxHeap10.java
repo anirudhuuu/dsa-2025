@@ -5,21 +5,21 @@ package heaps;
  * ==============================
  * Given a min-heap in array representation named nums, convert it into a
  * max-heap and return the resulting array.
- * 
+ * <p>
  * A min-heap is a complete binary tree where the key at the root is the minimum
  * among all keys present in a binary min-heap and the same property is
  * recursively true for all nodes in the Binary Tree.
  * A max-heap is a complete binary tree where the key at the root is the maximum
  * among all keys present in a binary max-heap and the same property is
  * recursively true for all nodes in the Binary Tree.
- * 
+ * <p>
  * Since there can be multiple answers, the compiler will return true if it's
  * correct, else false.
- * 
+ * <p>
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
-public class MinToMaxHeap09 {
+public class MinToMaxHeap10 {
     public static void heapifyDown(int[] nums, int index) {
         int n = nums.length; // total no of nodes
 
@@ -61,7 +61,7 @@ public class MinToMaxHeap09 {
     }
 
     public static void main(String[] args) {
-        int[] minHeap = { 2, 6, 3, 100, 120, 4, 5 };
+        int[] minHeap = {2, 6, 3, 100, 120, 4, 5};
         int[] result = minToMaxHeap(minHeap);
 
         for (int val : result) {

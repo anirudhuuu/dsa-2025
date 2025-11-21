@@ -12,7 +12,7 @@ import java.util.Arrays;
  * Modify the original array in-place, no need to return anything.
  *
  * Time Complexity: O(log n)
- * Space Complexity: O(1)
+ * Space Complexity: O(1) + recursive stack space O(log n) for the height of the tree [from very bottomest to top]
  */
 public class Heapify02 {
     void heapifyUp(int[] nums, int index) {

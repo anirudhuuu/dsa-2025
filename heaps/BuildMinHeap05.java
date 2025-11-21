@@ -12,7 +12,7 @@ package heaps;
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
-public class BuildMinHeap04 {
+public class BuildMinHeap05 {
     void heapifyDown(int[] nums, int index) {
         int n = nums.length;
 
@@ -57,7 +57,7 @@ public class BuildMinHeap04 {
     static void main() {
         int[] nums = {6, 5, 2, 7, 1, 7};
 
-        new BuildMinHeap04().buildMinHeap(nums);
+        new BuildMinHeap05().buildMinHeap(nums);
 
         for (int num : nums) {
             System.out.print(num + " ");

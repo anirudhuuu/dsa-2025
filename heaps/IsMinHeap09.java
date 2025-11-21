@@ -5,15 +5,15 @@ package heaps;
  * ==========================================
  * Given an array of integers nums. Check whether the array represents a binary
  * min-heap or not. Return true if it does, otherwise return false.
- * 
+ * <p>
  * A binary min-heap is a complete binary tree where the key at the root is the
  * minimum among all keys present in a binary min-heap and the same property is
  * recursively true for all nodes in a Binary Tree.
- * 
+ * <p>
  * Time Complexity: O(N)
  * Space Complexity: O(1)
  */
-public class IsMinHeap08 {
+public class IsMinHeap09 {
     public static boolean isHeap(int[] nums) {
         // no of nodes
         int N = nums.length - 1;
@@ -34,9 +34,9 @@ public class IsMinHeap08 {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = { 1, 3, 5, 7, 9, 11 };
-        int[] nums2 = { 10, 15, 20, 30, 40 };
-        int[] nums3 = { 10, 9, 20, 30, 40 };
+        int[] nums1 = {1, 3, 5, 7, 9, 11};
+        int[] nums2 = {10, 15, 20, 30, 40};
+        int[] nums3 = {10, 9, 20, 30, 40};
 
         System.out.println(isHeap(nums1));
         System.out.println(isHeap(nums2));

@@ -12,7 +12,7 @@ package heaps;
  * Time Complexity: O(n)
  * Space Complexity: O(1)
  */
-public class BuildMaxHeap05 {
+public class BuildMaxHeap06 {
     void heapifyDown(int[] nums, int index) {
         int n = nums.length;
 
@@ -55,7 +55,7 @@ public class BuildMaxHeap05 {
     static void main() {
         int[] nums = {6, 5, 2, 7, 1, 7};
 
-        new BuildMaxHeap05().buildMaxHeap(nums);
+        new BuildMaxHeap06().buildMaxHeap(nums);
 
         for (int num : nums) {
             System.out.print(num + " ");
