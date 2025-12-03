@@ -1,6 +1,15 @@
 package linked_list.theory;
 
-public class DeletionLL {
+/*
+ * Deletion in Linked list
+ * ==========================
+ * Goal is to perform the operation of delete at following ways:
+ * - head
+ * - tail
+ * - position
+ * - value
+ */
+public class DeletionLL04 {
     class Node {
         int data;
         Node next;
@@ -16,8 +25,8 @@ public class DeletionLL {
         }
     }
 
-    Node deleteHead(Node head) {
-        // List is empty
+    Node deleteAtHead(Node head) {
+        // Check for empty list
         if (head == null) {
             return null;
         }
@@ -29,12 +38,12 @@ public class DeletionLL {
     }
 
     Node deleteTail(Node head) {
-        // List is empty
+        // Check for empty list
         if (head == null) {
             return null;
         }
 
-        // List has only single element
+        // Check if list has only single element
         if (head.next == null) {
             return null;
         }
@@ -52,7 +61,7 @@ public class DeletionLL {
         return head;
     }
 
-    // Remove value at K-th index
+    // Remove value at K-th index wrt (1-based indexing)
     Node deleteKthValue(Node head, int k) {
         // List is empty
         if (head == null) {
@@ -108,5 +117,21 @@ public class DeletionLL {
         }
 
         return head;
+    }
+
+    void main() {
+        Node head = new Node(10);
+        head.next = new Node(20, null);
+        head.next.next = new Node(30, null);
+        head.next.next.next = new Node(40, null);
+        head.next.next.next.next = new Node(50, null);
+        head.next.next.next.next.next = new Node(60, null);
+        head.next.next.next.next.next.next = new Node(70, null);
+        head.next.next.next.next.next.next.next = new Node(80, null);
+
+        deleteAtHead(head);
+        deleteTail(head);
+        deleteKthValue(head, 2);
+        deleteByValue(head, 50);
     }
 }

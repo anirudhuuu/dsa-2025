@@ -1,6 +1,6 @@
 package linked_list.theory;
 
-public class InsertionLL {
+public class InsertionLL05 {
     class Node {
         int data;
         Node next;
@@ -25,12 +25,11 @@ public class InsertionLL {
         }
 
         // One or more elements are present
-        Node temp = new Node(value, head);
+        Node temp = new Node(value);
+        temp.next = head;
         head = temp;
 
         return head;
-
-        // return new Node(value, head); --> Pro way of writing
     }
 
     Node insertTail(Node head, int value) {

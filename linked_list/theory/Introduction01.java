@@ -1,6 +1,11 @@
 package linked_list.theory;
 
-public class Introduction {
+/*
+ * Intro to Linked List
+ * =======================
+ * Represent the atomic node of linked list at memory
+ */
+public class Introduction01 {
     static class Node {
         int data;
         Node next;
@@ -9,15 +14,11 @@ public class Introduction {
             this.data = data;
             this.next = null;
         }
-
-        Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
     }
 
-    public static void main(String[] args) {
+    static void main() {
         int[] arr = {2, 5, 6, 8};
+
         Node y = new Node(arr[3]);
         System.out.println(y.data);
     }
