@@ -1,7 +1,16 @@
 package linked_list.theory;
 
+/**
+ * Insertion in Linked List
+ * ============================
+ * To be able to perform the following operations
+ * - head
+ * - tail
+ * - k-th value
+ * - after a value
+ */
 public class InsertionLL05 {
-    class Node {
+    static class Node {
         int data;
         Node next;
 
@@ -112,5 +121,17 @@ public class InsertionLL05 {
         }
 
         return head;
+    }
+
+    static void main() {
+        Node head = new Node(20);
+        head.next = new Node(30);
+        head.next.next = new Node(40);
+
+        // insertion via methods
+        new InsertionLL05().insertHead(head, 10);
+        new InsertionLL05().insertTail(head, 50);
+        new InsertionLL05().insertAtKthValue(head, 25, 3);
+        new InsertionLL05().insertAfterValue(head, 26, 25);
     }
 }
