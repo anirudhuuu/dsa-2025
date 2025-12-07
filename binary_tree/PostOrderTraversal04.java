@@ -1,18 +1,20 @@
 package binary_tree;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
 /*
- * Inorder Traversal
+ * Postorder Traversal
  * ====================
- * Given root of binary tree, return the Inorder traversal of the binary tree.
+ * Given root of binary tree, return the Postorder traversal of the binary tree.
+ *
  * - These are kind of DFS traversal technique
- * - Left   x Root   x Right
- * - Travel x Access x Travel
+ * - Left   x Right  x Root
+ * - Travel x Travel x Access
  */
-public class InOrderTraversal02 {
+public class PostOrderTraversal04 {
     static class Node {
         int data;
         Node left;
@@ -31,48 +33,49 @@ public class InOrderTraversal02 {
      * Time Complexity: O(N)
      * Space Complexity: O(N)
      * - N no of nodes
-     *
-     * In case of balanced binary tree,
-     * Space Complexity: O(Log (base 2) N)
      */
-    void inorder(Node node) {
+    void postorder(Node node) {
         if (node == null) {
             return;
         }
 
         // travel left
-        inorder(node.left);
+        postorder(node.left);
+        // travel right
+        postorder(node.right);
         // access root
         System.out.print(node.data + " ");
-        // travel right
-        inorder(node.right);
     }
 
-    /*
-     * Iterative way
-     * ----------------------
-     * Time Complexity: O(N)
-     * Space Complexity: O(N)
-     */
-    List<Integer> inorderIterative(Node root) {
+    List<Integer> postorderIterative(Node node) {
         Stack<Node> stack = new Stack<>();
         List<Integer> list = new ArrayList<>();
-        Node node = root;
 
-        while (true) {
-            if (node != null) {
-                stack.push(node);
-                node = node.left;
-            } else {
-                if (stack.empty()) {
-                    break;
-                }
+        stack.push(node);
 
-                node = stack.pop();
-                list.add(node.data);
-                node = node.right;
+        while (stack.empty() == false) {
+            // access root
+            node = stack.pop();
+            list.add(node.data);
+
+            // travel left
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+
+            // travel right
+            if (node.right != null) {
+                stack.push(node.right);
             }
         }
+
+        /*
+         * Because the algorithm is actually generating
+         * a "Root → Right → Left" traversal, and
+         * reversing it converts that order into the true
+         * Left → Right → Root postorder traversal.
+         */
+        Collections.reverse(list);
 
         return list;
     }
@@ -89,9 +92,9 @@ public class InOrderTraversal02 {
         root.right.left = new Node(6);
         root.right.right = new Node(7);
 
-        new InOrderTraversal02().inorder(root);
+        new PostOrderTraversal04().postorder(root);
         System.out.println();
-        List<Integer> result = new InOrderTraversal02().inorderIterative(root);
+        List<Integer> result = new PostOrderTraversal04().postorderIterative(root);
         for (Integer node : result) {
             System.out.print(node + " ");
         }
