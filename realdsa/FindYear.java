@@ -10,11 +10,11 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
+/*
  * Find Year
  * =========
  * Given a value, find if it exists in any year and month. If yes, return the year.
- * 
+ *
  * You have a folder structure like `data/<year>/<month>.txt`.
  * Each file contains a line: `[[Number of people: <value>]]`.
  *
@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  * - Each year is bigger than the previous year.
  * - Every year has all 12 months.
  * - Years are consecutive.
- * 
+ *
  * Time Complexity: O(log Y)
  * where Y is the number of years
  */
@@ -36,7 +36,7 @@ public class FindYear {
     public FindYear() {
         this.years = new ArrayList<>();
 
-        this.months = new String[] {
+        this.months = new String[]{
                 "January.txt",
                 "February.txt",
                 "March.txt",

@@ -11,7 +11,7 @@ package binary_search_tree;
  * Time Complexity: O(N)
  * Space Complexity: O(1)
  */
-public class SearchBST01 {
+class Search01 {
     static class Node {
         int data;
         Node left;
@@ -48,7 +48,7 @@ public class SearchBST01 {
         root.right.left = new Node(6);
         root.right.right = new Node(8);
 
-        System.out.println("Search for 4 :: " + new SearchBST01().searchBST(root, 4));
-        System.out.println("Search for 10 :: " + new SearchBST01().searchBST(root, 10));
+        System.out.println("Search for 4 :: " + new Search01().searchBST(root, 4));
+        System.out.println("Search for 10 :: " + new Search01().searchBST(root, 10));
     }
 }

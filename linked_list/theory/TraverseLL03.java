@@ -32,7 +32,7 @@ public class TraverseLL03 {
         return head;
     }
 
-    public List<Integer> traverseLL(Node head) {
+    List<Integer> traverseLL(Node head) {
         List<Integer> list = new ArrayList<>();
 
         Node temp = head;

@@ -5,8 +5,8 @@ package linked_list.theory;
  * =======================
  * Represent the atomic node of linked list at memory
  */
-public class Introduction01 {
-    static class Node {
+class Introduction01 {
+    class Node {
         int data;
         Node next;
 
@@ -14,12 +14,5 @@ public class Introduction01 {
             this.data = data;
             this.next = null;
         }
-    }
-
-    static void main() {
-        int[] arr = {2, 5, 6, 8};
-
-        Node y = new Node(arr[3]);
-        System.out.println(y.data);
     }
 }
