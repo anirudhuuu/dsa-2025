@@ -1,5 +1,7 @@
 package binary_search_tree;
 
+import java.util.Scanner;
+
 /*
  * Insert a given node in BST
  * =============================
@@ -8,8 +10,14 @@ package binary_search_tree;
  *
  * It is guaranteed that the new value does not exist in the original BST.
  * Note that the compiler output shows true if the node is added correctly, else false.
+ *
+ * Time Complexity:
+ * Balanced Tree - O(log N)
+ * Skewed Tree - O(N)
+ *
+ * Space Complexity: O(1)
  */
-public class InsertNode {
+public class InsertNode03 {
     static class Node {
         int data;
         Node left;
@@ -53,6 +61,20 @@ public class InsertNode {
     }
 
     static void main() {
+        Scanner sc = new Scanner(System.in);
+        Node root = null;
 
+        System.out.println("Enter the value of the node you want to insert (-1 to stop):");
+
+        while (true) {
+            int value = sc.nextInt();
+            if (value == -1) {
+                break;
+            }
+
+            root = new InsertNode03().insertIntoBST(root, value);
+        }
+
+        sc.close();
     }
 }
