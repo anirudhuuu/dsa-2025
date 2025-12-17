@@ -1,5 +1,14 @@
 package binary_tree;
 
+/**
+ * Binary Tree
+ * ==============
+ * A tree data structure in which each parent node can have at most two
+ * children. Each node of a binary tree consists of three items:
+ * - data item
+ * - address to left child
+ * - address to right child
+ */
 public class Introduction01 {
     static class Node {
         int data;
