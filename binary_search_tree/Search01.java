@@ -24,14 +24,15 @@ class Search01 {
         }
     }
 
-    Node searchBST(Node root, int val) {
-        while (root != null && root.data != val) {
-            if (val < root.data) {
-                root = root.left;
-            } else {
-                root = root.right;
-            }
-        }
+    Node searchBST(Node root, int key) {
+        if (root == null)
+            return null;
+
+        if (root.data > key)
+            return searchBST(root.left, key);
+
+        if (root.data < key)
+            return searchBST(root.right, key);
 
         return root;
     }
@@ -48,7 +49,11 @@ class Search01 {
         root.right.left = new Node(6);
         root.right.right = new Node(8);
 
-        System.out.println("Search for 4 :: " + new Search01().searchBST(root, 4));
-        System.out.println("Search for 10 :: " + new Search01().searchBST(root, 10));
+        Search01 s = new Search01();
+        Node find4 = s.searchBST(root, 4);
+        Node find10 = s.searchBST(root, 10);
+
+        System.out.println("Search for 4 :: " + find4.data);
+        System.out.println("Search for 10 :: " + (find10 == null ? "Not found" : find10.data));
     }
 }
