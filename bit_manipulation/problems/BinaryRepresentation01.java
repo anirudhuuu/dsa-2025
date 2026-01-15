@@ -17,14 +17,21 @@ public class BinaryRepresentation01 {
             return "0";
         }
 
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         while (n > 0) {
-            result = (n % 2) + result;
+            if (n % 2 == 1) {
+                result.append("1");
+            } else {
+                result.append("0");
+            }
+
             n = n / 2;
         }
 
-        return result;
+        result.reverse();
+
+        return result.toString();
     }
 
     static void main() {
